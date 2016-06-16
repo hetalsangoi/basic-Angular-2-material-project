@@ -13,14 +13,11 @@ var common_1 = require('@angular/common');
 var input_1 = require('@angular2-material/input');
 var icon_1 = require('@angular2-material/icon');
 var button_1 = require('@angular2-material/button');
-var router_deprecated_1 = require('@angular/router-deprecated');
 var card_1 = require('@angular2-material/card');
 var list_1 = require('@angular2-material/list');
 var grid_list_1 = require('@angular2-material/grid-list');
-var next_component_1 = require('../next/next.component');
 var SearchComponent = (function () {
-    function SearchComponent(router) {
-        this.router = router;
+    function SearchComponent() {
         this.query = '';
         this.selectedTest = [];
         this.tests = [
@@ -63,22 +60,14 @@ var SearchComponent = (function () {
     SearchComponent.prototype.delete = function (testNAME, $index) {
         this.selectedTest.splice($index, 1);
     };
-    SearchComponent.prototype.gotoNext = function (tests) {
-        var link = ['Next', { selectTests: tests }];
-        this.router.navigate(link);
-    };
     SearchComponent = __decorate([
         core_1.Component({
             selector: 'search',
             templateUrl: 'app/search/search.html',
-            directives: [common_1.FORM_DIRECTIVES, input_1.MD_INPUT_DIRECTIVES, icon_1.MdIcon, button_1.MdButton, card_1.MD_CARD_DIRECTIVES, list_1.MD_LIST_DIRECTIVES, grid_list_1.MD_GRID_LIST_DIRECTIVES, router_deprecated_1.ROUTER_DIRECTIVES, next_component_1.NextComponent],
-            providers: [icon_1.MdIconRegistry, router_deprecated_1.ROUTER_PROVIDERS]
-        }),
-        router_deprecated_1.RouteConfig([
-            { path: 'search', name: 'Home', component: SearchComponent, useAsDefault: true },
-            { path: '../next/next', name: 'Next', component: next_component_1.NextComponent }
-        ]), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router])
+            directives: [common_1.FORM_DIRECTIVES, input_1.MD_INPUT_DIRECTIVES, icon_1.MdIcon, button_1.MdButton, card_1.MD_CARD_DIRECTIVES, list_1.MD_LIST_DIRECTIVES, grid_list_1.MD_GRID_LIST_DIRECTIVES],
+            providers: [icon_1.MdIconRegistry]
+        }), 
+        __metadata('design:paramtypes', [])
     ], SearchComponent);
     return SearchComponent;
 }());

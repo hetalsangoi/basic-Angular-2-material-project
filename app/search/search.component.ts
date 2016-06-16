@@ -3,29 +3,20 @@ import {FORM_DIRECTIVES} from '@angular/common';
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
 import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
 import {MdButton} from '@angular2-material/button';
-import {RouteConfig, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
 import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
 import {MD_GRID_LIST_DIRECTIVES} from '@angular2-material/grid-list';
-import { NextComponent } from '../next/next.component';
 
 
 @Component({
   selector:'search',
   templateUrl:'app/search/search.html',
-  directives:[FORM_DIRECTIVES, MD_INPUT_DIRECTIVES, MdIcon, MdButton, MD_CARD_DIRECTIVES, MD_LIST_DIRECTIVES, MD_GRID_LIST_DIRECTIVES, ROUTER_DIRECTIVES, NextComponent],
-  providers: [MdIconRegistry, ROUTER_PROVIDERS]
+  directives:[FORM_DIRECTIVES, MD_INPUT_DIRECTIVES, MdIcon, MdButton, MD_CARD_DIRECTIVES, MD_LIST_DIRECTIVES, MD_GRID_LIST_DIRECTIVES],
+  providers: [MdIconRegistry]
 })
 
-@RouteConfig([
-  { path: 'search', name: 'Home', component: SearchComponent, useAsDefault: true },
-  { path: '../next/next', name: 'Next', component: NextComponent }
-])
 
 export class SearchComponent{
-constructor(private router: Router){
-  
-}
 
   public query = '';
   public selectedTest= [];
@@ -83,9 +74,6 @@ constructor(private router: Router){
     
   }
 
-  gotoNext(tests) {
-    let link = ['Next', { selectTests: tests }];
-    this.router.navigate(link);
-  }
+  
 
 }
