@@ -1,0 +1,34 @@
+h1 {
+  color: black; }
+
+h2 {
+  color: black; }
+
+h3 {
+  color: black; }
+
+.pcard {
+  display: inline-block !important;
+  margin: 15px; }
+
+.ccard {
+  width: 30%;
+  height: auto;
+  padding: 10px;
+  display: -webkit-inline-box; }
+
+h4 {
+  color: grey; }
+
+.md-list-item-text {
+  padding: 10px;
+  display: inline-table;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+md-list-item {
+  display: table; }
+
+.suggestions {
+  display: table;
+  position: absolute; }

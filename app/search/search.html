@@ -1,0 +1,34 @@
+<div class="row" style="background-color:rgb(233,30,99); height: 150px">
+  <h1 align="center">Search For Prescribed Tests</h1><br>
+  <div style="padding:5px; display:inline-block;">
+  <md-card>
+    <md-list>
+      <md-list-item *ngFor="#testNAME of selectedTest; #i=index">
+        <h3 md-line>{{testNAME}}
+        </h3>
+        <button md-icon-button color="white">
+        <md-icon (click)="delete(testNAME, i)">cancel</md-icon>
+        </button>
+      </md-list-item>
+    </md-list>
+  </md-card>
+  </div>
+
+  <form align="center" (ngSubmit)="onSubmit()">
+    <md-icon>search</md-icon>          
+      <md-input placeholder="search for tests" [(ngModel)]="query" (keyup)="filter()"></md-input>                  
+        <md-card class="suggestions" *ngIf="results.length > 0">
+          <md-list>                      
+            <md-list-item *ngFor="let item of results"> 
+              <div class="md-list-item-text" layout="column">                
+                <h3 md-line (click)="select(item)">{{item.tname}}</h3> 
+                <h4 md-line (click)="select(item)">{{item.tsubname}}</h4>
+              </div>                   
+            </md-list-item>                      
+          </md-list>
+        </md-card>                  
+    <button style="position:fixed;" type="submit" md-raised-button color="primary" 
+    (click)="gotoNext(selectedTest)">GO
+    </button>
+  </form>
+</div>

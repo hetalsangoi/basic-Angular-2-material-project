@@ -1,0 +1,21 @@
+$primary-color: black;
+h1 {
+  color: $primary-color;
+}
+h2 {
+  color: $primary-color;
+}
+h3 {
+  color: $primary-color;
+}
+.pcard{
+	display: inline-block !important;
+	margin: 15px;
+}
+.ccard{
+	width: 30%;
+    height: auto;
+    padding: 10px;
+    display: -webkit-inline-box;
+}
+

@@ -1,0 +1,17 @@
+$primary-color: grey;
+h4 {
+  color: $primary-color;
+}
+.md-list-item-text{
+	padding:10px;
+	display: inline-table;
+	margin-top: 10px;
+  margin-bottom: 10px;
+}
+md-list-item{
+	display: table;
+}
+.suggestions{
+	display: table;
+    position: absolute;
+}
